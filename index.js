@@ -1,6 +1,9 @@
 const stripe = require('stripe')('sk_test_51MSiMCLutRiIN1666JLcAEhyd9YhxCeIXuXDjqHpT1HSxqMpcu3a4tSvWwBjZsGLoAvhSlte3iivTX7Avci5WjUJ00PzFQCp2g');
+const express = require('express')
+const app = express()
 // This example sets up an endpoint using the Express framework.
 // Watch this video to get started: https://youtu.be/rPR2aJ6XnAc.
+app.use(express.json())
 
 app.post('/payment-sheet', async (req, res) => {
   // Use an existing Customer ID if this is a returning customer.
