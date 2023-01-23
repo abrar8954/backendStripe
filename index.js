@@ -1,6 +1,7 @@
 const stripe = require('stripe')('sk_test_51MSiMCLutRiIN1666JLcAEhyd9YhxCeIXuXDjqHpT1HSxqMpcu3a4tSvWwBjZsGLoAvhSlte3iivTX7Avci5WjUJ00PzFQCp2g');
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 3000
 // This example sets up an endpoint using the Express framework.
 // Watch this video to get started: https://youtu.be/rPR2aJ6XnAc.
 app.use(express.json())
@@ -28,3 +29,7 @@ app.post('/payment-sheet', async (req, res) => {
     publishableKey: 'pk_test_51MSiMCLutRiIN166MnCfrWJPJSxxK5PhrLHKSYh6WaTKV4oiIm2myQGPluomaofSMkxg1d4J9u2k0iMXefh0RnV600Dds5Mgo3'
   });
 });
+
+app.listen(port,()=>{
+  console.log('server running')
+})
